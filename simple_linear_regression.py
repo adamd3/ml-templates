@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Simple Linear Regression
 
 # Importing the libraries
@@ -14,7 +16,7 @@ y = dataset.iloc[:, 2].values #dependent variable (salary)
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
 
-# NB: setting random state to 0 
+# NB: setting random state to 0
 
 # we have 30 observations in total, so
 # we will put 10 observations in the Test set and 20 observations
