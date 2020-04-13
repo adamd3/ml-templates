@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 
+##------------------------------------------------------------------------------
+## Import libraries
+##------------------------------------------------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-# Import the data set
+##------------------------------------------------------------------------------
+## Import the dataset
+##------------------------------------------------------------------------------
 dataset = pd.read_csv('Salary_Data.csv')
 X = dataset.iloc[:, :-1].values #independent variable (years experience)
 y = dataset.iloc[:, 2].values #dependent variable (salary)
