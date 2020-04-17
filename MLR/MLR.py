@@ -10,7 +10,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
-import statsmodels.formula.api as sm
+import statsmodels.api as sm
 
 
 ##------------------------------------------------------------------------------
@@ -78,14 +78,13 @@ y_train = sc_y.fit_transform(y_train)"""
 ##------------------------------------------------------------------------------
 ## Fit MLR to the Training set
 ##------------------------------------------------------------------------------
-
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
-# compare y_pred and y_test to check accuracy
 
+# compare y_pred and y_test to check accuracy
 np.set_printoptions(precision=2)
 print(
     np.concatenate(
@@ -98,5 +97,5 @@ print(
 ## Backward Elimination for model improvement
 ##------------------------------------------------------------------------------
 SL = 0.05
-X_opt = X[:, [0, 1, 2, 3, 4, 5]]
-X_Modeled = backwardElimination(X_opt, SL)
+X_opt = np.array(X[:, [0, 1, 2, 3, 4, 5]], dtype = float) # column indices for vars
+X_Modeled = backwardElimination(X_opt, SL) #remove based on SL
