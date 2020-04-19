@@ -7,9 +7,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-
 
 
 ##------------------------------------------------------------------------------
@@ -20,13 +17,11 @@ X = dataset.iloc[:, 1:-1].values
 y = dataset.iloc[:, -1].values
 
 
-
 ##------------------------------------------------------------------------------
 ## Fitting RFR to the Training set
 ##------------------------------------------------------------------------------
 regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
 regressor.fit(X, y)
-
 
 
 ##------------------------------------------------------------------------------
