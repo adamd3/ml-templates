@@ -1,2 +1,2 @@
 # ml-templates
-ML templates for scikit-learn.
+ML templates for pytho.
